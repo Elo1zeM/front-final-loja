@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Produto - B7Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/global.css" />
+    <link rel="stylesheet" href="assets/css/header.css" />
+    <link rel="stylesheet" href="assets/css/footer.css" />
+    <link rel="stylesheet" href="assets/css/product.css" />
+</head>
+
+<body class="bg-gray-50 min-h-screen">
+    <section class="header-warning">
+        <div class="mobile"><span>FRETE GRÁTIS</span> para todo o Nordeste!</div>
+        <div class="desktop"><span>FRETE GRÁTIS</span> para todo o Nordeste nas compras acima de R$ 199,00. <span>APROVEITA!</span></div>
+    </section>
+
+    <header>
+        <div class="header-main">
+            <div class="header-left">
+                <a class="logo" href="index.html">
+                    <img src="assets/images/ui/logo-black.png" alt="B7Store" />
+                </a>
+                <ul>
+                       <li><a href="produtos.html?categoria=Camisetas">Camisetas</a></li>
+                       <li><a href="produtos.html?categoria=Blusas">Blusas</a></li>
+                       <li><a href="produtos.html?categoria=Acess%C3%B3rios">Acessórios</a></li>
+                </ul>
+            </div>
+            <div class="header-right">
+                <input class="search" type="text" placeholder="Pesquisa" />
+                <a href="login.html" class="btn-icon">
+                    <img src="assets/images/ui/user-line.png" alt="" />
+                </a>
+                       <li><a href="produtos.html?categoria=Camisetas">Camisetas</a></li>
+                       <li><a href="produtos.html?categoria=Blusas">Blusas</a></li>
+                       <li><a href="produtos.html?categoria=Acess%C3%B3rios">Acessórios</a></li>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12">
+        <div class="space-y-8">
+            <div class="bg-white rounded-xl shadow-md border border-gray-100 p-8">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900">Cadastro de produto</h1>
+                        <p class="mt-2 text-gray-600">Cadastre rapidamente novos produtos para sua loja.</p>
+                    </div>
+                    <div class="text-right text-sm text-gray-600">
+                        <div id="user-info">Usuário não autenticado</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid gap-8 lg:grid-cols-[1.3fr_0.7fr]">
+                <section class="bg-white rounded-xl shadow-md border border-gray-100 p-8">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-6">Dados do produto</h2>
+                    <form id="product-form" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" for="product-name">Nome do produto</label>
+                            <input id="product-name" name="name" required type="text" placeholder="Camisa Node JS"
+                                class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 focus:border-black focus:ring-black" />
+                        </div>
+                        <div class="grid gap-4 md:grid-cols-2">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2" for="product-price">Preço</label>
+                                <input id="product-price" name="price" required type="number" step="0.01" placeholder="59.90"
+                                    class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 focus:border-black focus:ring-black" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2" for="product-category">Categoria</label>
+                                <input id="product-category" name="category" required type="text" placeholder="Camisetas"
+                                    class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 focus:border-black focus:ring-black" />
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" for="product-stock">Estoque</label>
+                            <input id="product-stock" name="stock" required type="number" min="0" placeholder="10"
+                                class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 focus:border-black focus:ring-black" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" for="product-image">URL da imagem</label>
+                            <input id="product-image" name="image" type="url" placeholder="https://..."
+                                class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 focus:border-black focus:ring-black" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2" for="product-description">Descrição</label>
+                            <textarea id="product-description" name="description" rows="4" placeholder="Descrição completa do produto"
+                                class="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 focus:border-black focus:ring-black"></textarea>
+                        </div>
+                        <div class="flex items-center justify-between gap-4">
+                            <div id="product-message" class="text-sm text-green-600"></div>
+                            <button type="submit"
+                                class="inline-flex items-center justify-center rounded-lg bg-black px-6 py-3 text-sm font-semibold text-white hover:bg-gray-800 transition">Salvar produto</button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="bg-white rounded-xl shadow-md border border-gray-100 p-8">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 class="text-xl font-semibold text-gray-900">Produtos cadastrados</h2>
+                            <p class="mt-1 text-sm text-gray-600">Visualize os produtos já adicionados.</p>
+                        </div>
+                    </div>
+                    <div id="product-list" class="space-y-4"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-12 bg-black text-white">
+        <div class="footer-menu">
+            <a class="logo" href="index.html">
+                <img src="assets/images/ui/logo-white.png" alt="B7Store" />
+            </a>
+            <ul>
+                <li><a href="produtos.html">Camisetas</a></li>
+                <li><a href="produtos.html">Blusas</a></li>
+                <li><a href="produtos.html">Acessórios</a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <div class="phrase">Se você leu isso aqui, saiba que está no caminho certo!</div>
+        </div>
+    </footer>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/product-register.js"></script>
+</body>
+
+</html>
